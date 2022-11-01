@@ -1,0 +1,1433 @@
+@font-face {
+  font-family: 'RFDewi';
+  src: url('../fonts/RFDewi-Semibold.ttf') format('truetype');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RFDewi';
+  src: url('../fonts/RFDewi-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'RFDewiExtended';
+  src: url('../fonts/RFDewiExtended-Bold.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 5;
+  outline: none;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'RFDewi','Ariel', sans-serif;
+}
+
+li {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+.body.lock {
+  overflow: hidden;
+}
+
+.header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: absolute;
+  top: 0;
+  padding: 20px 100px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(2px);
+  z-index: 50;
+}
+
+.navigation-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navigation-item {
+  margin-left: 32px;
+}
+
+.navigation-item:first-child {
+  margin-left:0;
+}
+
+.menu-icon {
+  display: none;
+  background: transparent;
+  border: none;
+}
+
+.nav-link, .request {
+  color: #fff;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 129%;
+  text-align: center;
+  transition: .4s ease;
+}
+
+.nav-link {
+  border-bottom: 1px solid transparent;
+}
+
+.request {
+  border: 1px solid transparent;
+  padding: 10px 15px;
+}
+
+.request:hover, .nav-link:hover {
+  border-color: #fff;
+}
+
+.content {
+  background: linear-gradient(180deg, rgba(35, 30, 30, 0.76) 0%, #000 100%);
+  opacity: 0.9;
+}
+
+.logo {
+  width: 260px;
+}
+
+.logo img {
+  width: 100%;
+}
+
+.preview {
+  position: relative; 
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background-image: url(../img/fon1.jpg);
+  background-size:cover;
+  padding: 0 46px 60px 0;
+
+}
+
+.title,.request-button,.learn-more,.about-title,.about-subtitle,.advantage-title {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  color: #fff;
+}
+
+.subtitle,.about-text,.benefits-text {
+  font-family: 'RF Dewi',sans-serif;
+  color: #fff;
+}
+
+.title {
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 129.%;
+  text-align: center;
+}
+
+.subtitle {
+  font-weight: 500;
+  font-size: 25px;
+  line-height: 129%;
+  text-align: center;
+  margin-top: 24px;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 38px;
+}
+
+.request-button {
+  width: 260px;
+  height: 60px;
+  background: #fff;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: center;
+  color: #000;
+  border: none;
+  margin-right: 60px; 
+  cursor: pointer;
+  padding-top: 20px;
+}
+
+.learn-more {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  text-align: center;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.about {
+  display: flex;
+  flex-direction: column;
+  background: url(../img/fon2.png);
+  background-size: cover;
+  padding: 0 30px 117px 120px;
+}
+
+.about-company,.advantage {
+  display: flex;
+  justify-content:space-evenly;
+  align-items: center;
+}
+
+.about-text-block {
+  display: flex;
+  flex-direction: column;
+  margin-left: 96px;
+}
+
+.phone {
+  margin-top: 45px;
+  height: 500px;
+}
+
+.about-title {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 129%;
+}
+
+.about-subtitle {
+  margin-top: 23px;
+  font-weight: 500;
+  font-size: 26px;
+  line-height: 31px;
+  max-width: 555px;
+}
+
+.about-text {
+  max-width: 450px;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  opacity: 0.6;
+  margin-top: 15px;
+}
+
+.advantage-block {
+  margin-top: 40px; 
+}
+
+.advantage-title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+}
+
+.advantage-list {
+  list-style: none;
+}
+
+.macbook {
+  width: 500px;
+  height: 300px;
+}
+
+.advantage-item {
+  position: relative;
+  max-width: 500px;
+  font-family: 'Montserrat';
+  font-style: normal;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  opacity: 0.6;
+  margin: 30px 0 0 50px;
+}
+
+.advantage-item::before {
+  content:'';
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background: #00BF63;
+  border-radius: 50%;
+  right:103%;
+  top:7px;
+}
+
+.about-button {
+  margin-top: 40px; 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.more-info,.consultation {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 157%;
+  text-align: center;
+  color: #fff;
+}
+
+.consultation {
+  width: 200px;
+  height: 55px;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.2) 0%, rgba(255, 255, 255, 0) 100%), rgba(255, 255, 255, 0.3);
+  border-radius: 20px;
+  border: none;
+  cursor: pointer;
+  padding-top: 15px;
+}
+
+.more-info {
+  text-decoration: none;
+  margin-left: 40px;
+}
+
+.benefits {
+  width: 100%;
+  background: url(../img/fon3.jpg);
+  background-size: cover;
+  mix-blend-mode: hard-light;
+  opacity: 0.9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 80px 0;
+}
+
+.benefits-title,.requirements-title {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  text-align: center;
+}
+
+.benefits-title {
+  line-height: 129%;
+  letter-spacing:0.2rem;
+  color: #000;
+}
+
+.benefits-block {
+  width: 100%;
+  max-width: 1023px;
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  border-radius: 42px;
+  margin-top: 30px;
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  padding: 0 40px 50px 40px;
+}
+
+.benefits-cart {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 54px
+}
+
+.benefits-text {
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 157%;
+  text-align: center;
+  max-width: 236px;
+  margin-top: 18px;
+}
+
+.wrap-icon {
+  width: 64px;
+  height: 64px;
+  background: #2be3a0;
+  box-shadow: 0 17px 17px rgba(43, 227, 160, 0.28);
+  border-radius: 12px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.yellow {
+  background: #ffbf44;
+}
+
+.icon {
+  width: 37px;
+}
+
+.requirements,.contacts {
+  width: 100%;
+  background: url(../img/fon4.png);
+  background-size: cover;
+  opacity: 0.9;
+  padding: 85px 60px 90px 70px;
+}
+
+.requirements-title {
+  line-height: 54px;
+  color: #fff;
+  margin: 20px 0 ;
+}
+
+.requirements-content {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.round {
+  width: 322px;
+  position: absolute;
+  z-index: 3;
+}
+
+.audi {
+  width: 600px;
+  height: 395px;
+}
+
+.right-content-list {
+  padding-left: 45px;
+  margin-left: 70px;
+}
+
+.right-content-item {
+  font-family: 'RF Dewi',sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.right-content-item::before,.excellence-item::before {
+  content:'';
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  background: #00bf63;
+  border-radius: 50%;
+}
+
+.right-content-item::before {
+  right: 103%;
+  top: 15%;
+}
+
+.form-block {
+  background: url(../img/fon5.png) ;
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  padding: 86px 190px 80px 132px;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  position: relative;
+}
+
+.form-block:before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.45);
+}
+
+.wrap-text {
+  width: calc(100% - 400px);
+}
+
+.form-title,.map-title,.contacts-title,.contacts-text {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 700;
+  color: #fff;
+}
+
+.form-title {
+  font-size: 36px; 
+  line-height: 43px;
+  max-width: 736px;
+  margin-top: 10px;
+}
+
+.form-subtitle {
+  font-family: 'RF Dewi',sans-serif;
+  font-weight: 500;
+  font-size: 18px;
+  line-height: 19px;
+  color: #fff;
+  margin-top: 20px;
+}
+
+.request-form {
+  width: 340px;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.request-field {
+  width: 100%;
+  height: 40px;
+  background: transparent;
+  padding-left: 20px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  border: 1px solid #ffbf44;
+  border-radius: 7px;
+}
+
+.request-field::placeholder {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 19px;
+  color: #fff;
+}
+
+.form-button {
+  width: 343px;
+  height: 40px;
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 19px;
+  text-align: center;
+  border: none;
+  cursor: pointer;
+  border-radius: 7px;
+  background-color: #00BF63;
+  color: #fff;
+}
+
+.map-title {
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.76) 0%, #000 100%);
+  opacity: 0.67;
+  font-size: 45px;
+  line-height: 54px;
+  text-align: center;
+}
+
+.wrapmap {
+  width: 100%;
+  height: 550px;
+}
+
+.first-line,.second-line {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.second-line {
+  margin-top: 50px;
+  justify-content: space-around;
+}
+
+.contacts-title {
+  font-size: 45px;
+  line-height: 54px;
+}
+
+.contacts-text {
+  font-size: 20px;
+  line-height: 19px;
+  text-align: center;
+}
+
+.contacts-logo {
+  width: 200px;
+}
+
+.contacts-logo img {
+  width: 100%;
+}
+
+.phone-number,.link-number {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.footer {
+  background: #1e1e1e;
+  max-height: 237px;
+  padding: 65px 110px 58px 150px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.footer-list {
+  list-style: none;
+  display: flex;
+}
+
+.footer-item {
+  margin-left: 32px;
+  font-size: 18px;
+  line-height: 129%;
+}
+
+.footer-item:first-child {
+  margin-left: 0;
+}
+
+.document,.partner,.footer-item {
+  font-family: 'RF Dewi',sans-serif;
+  font-weight: 600;
+  color: #fff;
+}
+
+.document, .partner {
+  font-size: 16px;
+  line-height: 19px;
+  opacity: 0.4; 
+  margin-right: 10px;
+}
+
+.delivery-block {
+  width: 100%;
+  min-height: 900px;
+  background: url(../img/fon7.png);
+  background-size: cover;
+  display: flex;
+  justify-content:center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.delivery-block::before,.excellence::before,.couriers::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.76) 0%, #000000 100%);
+  opacity: 0.7;
+  position: absolute;
+  z-index: 1;
+}
+
+
+.delivery-title,.excellence-title,.couriers-title,.questions-title,.questions-item {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  color:#fff;
+}
+
+.delivery-title {
+  font-weight: 600;
+  font-size: 52px;
+  line-height: 129%;
+  text-align: center;
+}
+
+.excellence {
+  width: 100%;
+  min-height: 632px;
+  background: url(../img/fon8.png);
+  background-size: cover;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.excellence-text {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(6px);
+  border-radius: 42px;
+  width: 100%;
+  max-width: 732px;
+  padding: 30px 20px 50px;
+  margin-left: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.excellence-title {
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+  line-height: 31px;
+  margin-top: 20px;
+  text-align: center;
+}
+
+.excellence-list {
+  margin-top: 40px;
+}
+
+.excellence-item {
+  font-family: 'Montserrat',sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 20px;
+  color: #fff;
+  margin-top: 20px;
+  padding-left: 50px;
+}
+
+.excellence-item::before {
+  left:10px;
+}
+
+.excellence-image {
+  margin:0  30px;
+}
+
+.moto {
+  position: absolute;
+  z-index: 6;
+  right: -20px;
+  width: 450px;
+}
+
+.ellips {
+  width: 400px;
+}
+
+.couriers {
+  background: url(../img/fon9.png);
+  background-size: cover;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 40px 0;
+}
+
+.couriers-title {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 129%;
+  text-align: center;
+}
+
+.white {
+  background: #fff;
+}
+
+.questions {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../img/fon10.png);
+  background-size: cover;
+  padding: 50px 0;
+}
+
+.questions::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.76) 0%, #000000 100%);
+  opacity: 0.7;
+  z-index: 1;
+}
+
+.questions-title {
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 129%;
+  text-align: center;
+}
+
+.questions-list {
+  background: linear-gradient(0deg, rgba(233, 188, 71, 0.02), rgba(233, 188, 71, 0.02)), linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.18);
+  backdrop-filter: blur(2px);
+  border-radius: 41px;
+  width: 100%;
+  max-width: 1070px;
+  padding: 20px 40px 50px 40px;
+  margin-top: 40px;
+}
+
+.questions-item {
+  margin-top: 50px;
+  font-weight: 700;
+  font-size: 26px;
+  line-height: 31px;
+}
+
+.problem:hover {
+  color: #e9bc47;
+}
+
+.check {
+  display: none;
+}
+
+.drop-text {
+  overflow: hidden;
+  height: 0;
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 24px;
+}
+
+.check:checked + .drop-text {
+  height: auto;
+  padding: 20px 0;
+}
+
+.arrow {
+  width:34px; 
+  position: absolute;
+  right: 0;
+  top:0;
+}
+
+.delivery-contacts {
+  width: 100%;
+  min-height: 320px;
+  padding: 0 100px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  flex-direction: column;
+}
+
+.delivery-contacts::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.76) 0%, #000000 100%);
+  z-index: 1;
+  left: 0;
+}
+
+.faq {
+  width: 100%
+}
+
+.preview-faq {
+  min-height: 763px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: url(../img/fon11.png);
+  background-size: cover;
+}
+
+.preview-faq::before, .questions-block::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.76) 0%, #000000 100%);
+  z-index: 1;
+  opacity: 0.5;
+}
+
+.preview-title {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 700;
+  font-size: 113px;
+  line-height: 136px; 
+  text-align: center;
+  color: #fff;
+}
+
+.arrow-down {
+  width: 75px;
+  margin-top: 70px;
+}
+
+.questions-block {
+  background: url(../img/fon10.png);
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 50px 20px;
+}
+
+.questions-block::before {
+  height: 100%;
+}
+
+.form-fon {
+  background: url(../img/fon13.png);
+  background-size: cover;
+}
+
+.insurance-preview {
+  width: 100%;
+  min-height: 649px;
+  background: url(../img/fon14.png);
+  background-size: cover;
+  background-position: top;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.insurance-preview::before,.about-insurance::before {
+  content: '';
+  position: absolute;
+  z-index: 1;
+  height: 100%;
+  width: 100%;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.76) 0%, #000000 100%);
+  opacity: 0.7;
+}
+
+.insurance-title {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 600;
+  font-size: 45px;
+  line-height: 129%;
+  text-align: center;
+  color: #fff;
+}
+
+.about-insurance {
+  width: 100%;
+  min-height: 639px;
+  background: url(../img/fon4.png);
+  background-size: cover;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.about-subtitle-insurance {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  max-width: 679px;
+  font-weight: 600;
+  font-size: 26px;
+  line-height: 31px;
+  color: #fff;
+  padding: 0 50px;
+  margin-top: 40px;
+}
+
+.green-cart {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+  padding: 0 80px;
+  margin-top: 20px;
+}
+
+.green-cart::before {
+  content: '';
+  width: 19px;
+  height: 19px;
+  background: #00bf63;
+  border-radius: 50%;
+  position: absolute;
+  left: 50px;
+  
+}
+
+.about-title-insurance {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 129.19%;
+  color: #fff;
+  padding: 0 50px;
+}
+
+.ring {
+  position: absolute;
+  z-index: 2;
+  top:-150px;
+  width: 400px;
+}
+
+.pzu {
+  position: absolute;
+  z-index: 3;
+  top:-153px;
+  right: 50px;
+  width: 150px;
+  height: 300px;
+}
+
+.tesla {
+  width: 400px;
+}
+
+.line {
+  width: 57px;
+}
+
+.calculate {
+  width: 100%;
+  min-height: 405px;
+  background: url(../img/fon10.png);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calculate::before {
+  content: '';
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  z-index: 1;
+  background: linear-gradient(180deg, rgba(30, 30, 30, 0.76) 0%, #000 100%);
+  opacity: 0.6;
+}
+
+.calculate-block {
+  width: 100%;
+  max-width: 598px;
+  max-height: 112px;
+  background: linear-gradient(0deg, rgba(233, 188, 71, 0.02), rgba(233, 188, 71, 0.02)), linear-gradient(180deg, rgba(0, 0, 0, 0.2) 0%, rgba(0, 0, 0, 0) 100%), rgba(0, 0, 0, 0.18);
+  border: 2px solid #fff;
+  backdrop-filter: blur(2px);
+  border-radius: 20px;
+  padding: 27px 80px 30px 120px;
+  margin-top: 40px;
+}
+
+.calculate-title {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 700;
+  font-size: 45px;
+  line-height: 129%;
+  text-align: center;
+  color: #fff;
+}
+
+.white-text,.yellow-text {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  color: #fff;
+}
+
+.yellow-text {
+  color: #e9bc47;
+}
+
+.link-insurance {
+  font-family: 'RF Dewi Expanded',sans-serif;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  text-align: center;
+  color: #000;
+}
+
+.wrap-link {
+  width: 315px;
+  height: 61px;
+  background: #fff;
+  border-radius: 11px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 40px;
+}
+
+.media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.telegram {
+  margin-right: 10px;
+}
+
+.social-networks {
+  width: 36px;
+}
+
+@media screen and (max-width: 1280px) {
+  .header {
+    padding: 20px;
+  }
+
+  .logo {
+    width: 200px;
+  }
+}
+
+@media screen and (max-width: 1160px) {
+  .form-block, .requirements, .contacts {
+    padding: 80px 20px;
+  }
+
+  .footer {
+    padding: 35px 20px;
+  }
+
+}
+
+@media (max-width:1028px) {
+  .excellence-title {
+    font-size: 22px;
+  }
+  .excellence-item {
+    font-size: 12px;
+  }
+
+  .request {
+    display: none;
+  }
+}
+
+@media (max-width:905px) {
+  .phone {
+    height: 300px;
+  }
+
+  .macbook {
+    width: 400px;
+    height: 200px;
+  }
+
+  .navigation-list {
+    margin:0;
+  }
+
+  .title,.delivery-title {
+    font-size: 38px;
+  }
+
+  .arrow {
+    display: none;
+  }
+
+  .moto {
+    width:350px;
+  }
+
+  .ellips{
+    width: 300px;
+  }
+
+  .first-line, .footer, .form-block {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+  }
+
+  .wrap-text {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+
+  .contacts-text, .media {
+    margin: 20px 0;
+  }
+
+  .about-title-insurance {
+    font-size: 35px;
+  }
+
+  .about-subtitle-insurance {
+    font-size: 20px;
+  }
+
+  .ring {
+    width: 300px;
+  }
+
+  .tesla {
+    width:300px;
+  }
+
+  .insurance-title {
+    font-size: 30px;
+  }
+}
+
+@media (max-width:767px) {
+  .preview-title {
+    font-size: 50px;
+  }
+
+  .title,.benefits-title,.requirements-title,.map-title,.contacts-title {
+    font-size:30px;
+  }
+
+  .calculate-title {
+    font-size: 30px;;
+  }
+
+  .subtitle {
+    font-size: 20px;
+  }
+
+  .form-title {
+    font-size: 25px;
+  }
+
+  .request-button {
+    width: 150px;
+    height: 40px;
+    font-size: 15px;
+    padding: 8px;
+  }
+
+  .learn-more {
+    font-size: 15px;
+    margin-top: 10px;
+  }
+
+  .about-title,.delivery-title {
+    font-size: 28px;
+    text-align: center;
+  }
+
+  .about-subtitle,.advantage-title {
+    font-size: 22px;
+  }
+
+  .phone-number,.link-number {
+    font-size: 15px;
+  }
+
+  .phone, .macbook, .insurance-image, .excellence-image, .request {
+    display: none;
+  }
+
+  .audi {
+    width: 400px;
+    height: 300px;
+  }
+
+  .about-text-block {
+    margin-left: 0;
+  }
+
+  .footer {
+    padding:20px;
+  }
+
+  .about {
+    padding: 40px;
+  }
+  
+  .navigation-list {
+    display:flex;
+    flex-direction: column;
+  }
+
+  .navigation-item {
+    margin: 30px 0 0 0;
+  }
+
+  .navigation-item:first-child {
+    margin-top: 0;
+  }
+
+  .navigation {
+    position: fixed;
+    top:0;
+    left:0;
+    width: 100%;
+    height: 100vh;
+    transform: translate(-100%, 0);
+    background-color: rgba(0,0,0,0.9);
+    padding: 100px 30px 30px 90px;
+    transition: left 0.3s ease;  
+    overflow: auto;
+  }
+
+  .navigation.active {
+    transform: translate(0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+
+  .menu-icon.active span{
+    transform: scale(0) translate(0,-50%) ;
+  }
+
+  .menu-icon.active::before {
+    top: 50%;
+    transform: rotate(-45deg) translate(0,-50%);
+  }
+
+  .menu-icon.active::after {
+    bottom: 50%;
+    transform: rotate(45deg) translate(0,50%);
+  }
+
+  .menu-icon {
+    z-index: 6;
+    display: block;
+    width: 40px;
+    height: 18px;
+    cursor: pointer;
+  }
+
+  .menu-icon::before,.menu-icon::after,.menu-icon span {
+    left:0;
+    position: absolute;
+    width: 40px;
+    height: 10%;
+    transition: all 0.3s ease;
+    background-color: #fff;
+  }
+
+  .menu-icon::before,.menu-icon::after {
+    content: '';
+  }
+
+  .menu-icon::before {
+    top:0;
+  }
+
+  .menu-icon::after {
+    bottom: 0;
+  }
+
+  .menu-icon span {
+    top:50%;
+    transform: scale(1) translate(0,-50%);
+  }
+}
+
+
+@media (max-width:520px) {
+  .footer-list,.contacts-logo {
+    display: none;
+  }
+
+  .about-title {
+    font-size: 24px;
+  }
+
+  .second-line,.first-line {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .phone-number, .link-number {
+    font-size: 12px;
+  }
+
+  .benefits-block {
+    grid-template-columns: repeat(1,1fr);
+  }
+
+  .benefits-text {
+    font-size: 12px;
+  }
+
+  .audi {
+    width: 300px;
+    height: 250px;
+  }
+
+  .round {
+    width: 300px;
+  }
+
+  .right-content-list {
+    margin: 40px 0 0 0;
+  }
+
+  .contacts-text {
+    margin-left: 0;
+  }
+
+  .request-field {
+    width: 220px;
+  }
+
+  .form-button {
+    width: 220px;
+    height: 30px;
+  }
+
+  .calculate-block {
+    max-height: 150px;
+  }
+
+  .form-title {
+    font-size: 22px;
+    line-height: 100%;
+  }
+  .request-button {
+    height: 60px;
+  }
+
+  .request-form {
+    width: 100%;
+  }
+
+  .about-button, .buttons, .documents {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+  }
+
+  .more-info {
+    margin: 15px 0 0;
+  }
+
+  .request-button {
+    margin: 0 0 15px;
+    height: 40px;
+    width: 100%;
+  }
+
+  .preview, .insurance-preview, .calculate, .delivery-block {
+    padding: 20px;
+  }
+}
